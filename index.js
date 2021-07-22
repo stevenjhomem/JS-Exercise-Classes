@@ -210,8 +210,20 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager extends Instructor {
-   
+class ProjectManager extends Instructor{
+  constructor(ProjectManagerAttributes){
+    super(ProjectManagerAttributes);
+    this.gradClassName = ProjectManagerAttributes.gradClassName;
+    this.favInstructor = ProjectManagerAttributes.favInstructor;
+  }
+
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @${channel} standy times!`;
+  }
+
+  debugsCode(Student, subject){
+    return `${this.name} debugs ${Student.name}'s code on ${subject}`
+  }
 }
 /*
   STRETCH PROBLEM (no tests!)
